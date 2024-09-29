@@ -1,1 +1,1 @@
-[_](https://tc.alcy.cc/i/2024/04/21/6624165eea072.webp)
+![_](https://tc.alcy.cc/i/2024/04/21/6624165eea072.webp)
