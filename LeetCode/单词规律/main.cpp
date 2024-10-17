@@ -24,12 +24,20 @@ vector<string> split(string _str, char _c)
 bool wordPattern(string pattern, string s)
 {
     vector<string> strs = split(s, ' ');
-    map<char, string> dict;
+    if (strs.size() != pattern.size())
+        return false;
+    map<char, string> patternK_dict;
+    map<string, char> strsK_dict;
     for (int i = 0; i < pattern.size(); i++)
     {
-        if (dict.count(pattern[i]) == 0)
-            dict[pattern[i]] = strs[i];
-        else if (dict[pattern[i]] != strs[i])
+        if (patternK_dict.count(pattern[i]) == 0 && strsK_dict.count(strs[i]) == 0)
+        {
+                patternK_dict[pattern[i]] = strs[i];        
+                strsK_dict[strs[i]] = pattern[i];
+        }
+        else if (patternK_dict[pattern[i]] != strs[i]
+                 || 
+                strsK_dict[strs[i]] != pattern[i])
             return false;
     }
     return true;
