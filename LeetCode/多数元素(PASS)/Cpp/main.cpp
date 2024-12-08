@@ -10,16 +10,11 @@ int majorityElement(vector<int> &nums)
     int nums_size = nums.size();
     for (int i = 0; i < nums_size; i++)
     {
-        if (num_count.count(nums[i] == 0))
-            num_count[nums[i]] = 1;
-        else
-            num_count[nums[i]] += 1;
+        num_count[nums[i]] += 1;
+        if (num_count[nums[i]] > nums.size() / 2)
+            return nums[i];
     }
-
-    for (map<int, int>::iterator it = num_count.begin(); it != num_count.end(); it++)
-        if (it->second > nums_size / 2)
-            return it->first;
-    return 0; // 无用，解决g++警告
+    return nums[0]; // 无用，解决g++警告
 }
 
 int main(void)

@@ -28,7 +28,7 @@ long long maximumSumOfHeights(vector<int> &maxHeights)
             maxHeights[i + 1] = maxHeights[i];
     }
 
-    int count = 0;
+     long long int count = 0;
     for (int i : maxHeights)
     {
         count += i;
